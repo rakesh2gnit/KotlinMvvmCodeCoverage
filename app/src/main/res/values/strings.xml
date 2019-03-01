@@ -2,4 +2,7 @@
     <string name="app_name">KotlinMvvmCodeCoverage</string>
 
     <string name="login_error">Email or Password not valid</string>
+
+    <string name="retry">Retry</string>
+    <string name="login_req_error">An error occurred while request login</string>
 </resources>

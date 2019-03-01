@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:bind="http://schemas.android.com/tools">
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
-                name="loginViewModel"
-                type="com.myapp.kotlinmvvmcodecoverage.viewmodel.LoginViewModel"/>
+                name="registerViewModel"
+                type="com.myapp.kotlinmvvmcodecoverage.viewmodel.RegisterViewModel"/>
     </data>
 
     <ScrollView
@@ -19,12 +19,17 @@
                 android:layout_margin="8dp"
                 android:orientation="vertical">
 
+           <!-- <ProgressBar
+                    android:id="@+id/login_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{registerViewModel.pbar}" />-->
 
             <EditText
                     android:id="@+id/inEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:afterTextChanged="@{(editable)->loginViewModel.afterEmailTextChanged(editable)}"
+                    android:text="@={registerViewModel.etEmail}"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
                     android:padding="8dp"/>
@@ -33,7 +38,7 @@
                     android:id="@+id/inPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:afterTextChanged="@{(editable)->loginViewModel.afterPasswordTextChanged(editable)}"
+                    android:text="@={registerViewModel.etPassword}"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="8dp"/>
@@ -42,7 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:onClick="@{()-> loginViewModel.onLoginClicked()}"
+                    android:onClick="@{()-> registerViewModel.onLoginClicked()}"
                     android:text="LOGIN"
             />
             <!--bind:toastMessage="@{loginViewModel.toastMessage}"-->
